@@ -1,0 +1,87 @@
+<div class="banner d-flex align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @list.background_image %>); filter: grayscale(100%);">
+  <div class="container text-center">
+    <h1><%= @list.name %></h1>
+  </div>
+</div>
+<div class="container">
+  <div class="footer">
+    <hr>
+    <div class="title text-center">
+      <h1>New Bookmark</h1>
+    </div>
+    <div class="d-flex justify-content-center">
+      <%= simple_form_for [@list, @bookmark], html: { class: "col-6"} do |f| %>
+        <%= f.input :comment %>
+        <%= f.association :movie, input_html: {class: 'select2'} %>
+        <%= f.input :list, input_html: {value: @list.name}, disabled: true %>
+        <%= f.submit "Create Bookmark", class: "btn btn-success", id: "btn-validation" %>
+      <% end %>
+    </div>
+  </div>
+  <hr>
+  <div class="row justify-content-center">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div data-aos="flip-up" data-aos-offset="200" data-aos-delay="50" class="card-movie col-5">
+        <img src=<%= bookmark.movie.poster_url %> />
+        <div class="card-movie-infos">
+          <div>
+            <div class="card-movie-title">
+              <p><strong><%= bookmark.movie.title %></strong>  - <%= bookmark.movie.rating %> <i class="fas fa-star"></i></p>
+            </div>
+            <p><%= bookmark.movie.overview %></p>
+          </div>
+        </div>
+        <div class="card-footer d-flex justify-content-between align-items-center">
+          <p><i class="fas fa-quote-left"></i> <%= bookmark.comment %></p>
+          <%= link_to "Delete", bookmark_path(bookmark), method: :delete %>
+        </div>
+      </div>
+      <% end %>
+  </div>
+  <hr>
+  <br>
+  <div class="row justify-content-center">
+    <div class="card-reviews col-5">
+      <h2>Reviews</h2>
+      <% @list.reviews.each do |review|  %>
+        <p>
+          <% review.rating.times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+          <i><%= distance_of_time_in_words(Time.now, review.created_at)   %></i>
+        </p>
+        <p><%= review.comment %></p>
+        <hr>
+      <% end %>
+    </div>
+    <div class="card-add-review col-5">
+      <h3>Add your review</h3>
+      <%= simple_form_for [@list, @review] do |f| %>
+        <%= f.input :comment %>
+        <%= f.input :rating %>
+        <%= f.submit "Create Review", class: "btn btn-success" %>
+    <% end %>
+
+    </div>
+  </div>
+  <br>
+  <br>
+</div>
+
+
+<!-- # <% @list.movies.each do |movie| %>
+#   <div class="card-movie col-5">
+#     <img src=<%= movie.poster_url %> />
+#     <div class="card-movie-infos">
+#       <div>
+#         <div class="card-movie-title">
+#           <p><strong><%= movie.title %></strong>  - <%= movie.rating %> <i class="fas fa-star"></i></p>
+#         </div>
+#         <p><%= movie.overview %></p>
+#       </div>
+#     </div>
+#     <div class="card-footer">
+#       <p><i class="fas fa-quote-left"></i> <%= (movie.bookmarks.find_by list_id: @list.id).comment %></p>
+#     </div>
+#   </div>
+#   <% end %> -->

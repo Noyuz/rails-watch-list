@@ -1,0 +1,13 @@
+<div class="container d-flex justify-content-center">
+  <div class="form-group col-6">
+    <div class="form">
+    <h1>Add a new List</h1>
+      <%= simple_form_for @list do |f| %>
+        <%= f.input :name %>
+        <%= f.input :background_image %>
+        <%= f.submit "Create list", class: "btn btn-success", id: "btn-validation" %>
+      <% end -%>
+    </div>
+  </div>
+</div>
+

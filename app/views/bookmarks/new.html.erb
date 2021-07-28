@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>New Bookmark</h1>
+  <%= simple_form_for [@list, @bookmark], url: list_bookmarks_path do |f| %>
+        <%= f.input :comment %>
+        <%= f.association :movie, input_html: {class: 'select2'} %>
+        <%= f.input :list, input_html: {value: @list.name}, disabled: true %>
+        <%= f.submit "Create Bookmark", class: "btn btn-success", id: "btn-validation" %>
+      <% end -%>
+</div>
