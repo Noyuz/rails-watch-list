@@ -1,13 +1,12 @@
 require 'open-uri'
 
 # Seeding Lists -------------
-
-List.create(name: 'Drama')
-List.create(name: 'Comedy')
-List.create(name: 'Classic')
-List.create(name: 'Horror')
-List.create(name: 'Thriller')
-List.create(name: 'To rewatch')
+List.create(name: 'Drama', background_image: 'https://images.unsplash.com/photo-1559781728-fed5d011996a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
+List.create(name: 'Comedy', background_image: 'https://images.unsplash.com/photo-1612853777170-2c630d988310?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
+List.create(name: 'Classic', background_image: 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
+List.create(name: 'Horror', background_image: 'https://images.unsplash.com/photo-1602737337930-b4f775f99f77?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' )
+List.create(name: 'Thriller', background_image: 'https://images.unsplash.com/photo-1532977692289-827d858a170b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1337&q=80')
+List.create(name: 'To rewatch', background_image: 'https://images.unsplash.com/photo-1608170825938-a8ea0305d46c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1250&q=80')
 
 # Seeding Movies ------------------------------
 
