@@ -13,15 +13,16 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { LoadDynamicBannerText } from '../components/banner'
 
-AOS.init(); 
+AOS.init();
 
 document.addEventListener("turbolinks:load", () => {
-    AOS.refresh();
     initSelect2();
     if (!window.location.href.includes("list")) {
       LoadDynamicBannerText();
     }
   });
+
+
 
 Rails.start()
 Turbolinks.start()
