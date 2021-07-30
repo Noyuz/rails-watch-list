@@ -15,7 +15,6 @@ import { LoadDynamicBannerText } from '../components/banner'
 
 document.addEventListener("turbolinks:load", () => {
     initSelect2();
-    AOS.init();
     if (!window.location.href.includes("list")) {
       LoadDynamicBannerText();
     }
