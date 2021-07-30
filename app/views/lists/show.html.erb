@@ -21,7 +21,7 @@
   <hr>
   <div class="row justify-content-center">
     <% @list.bookmarks.each do |bookmark| %>
-      <div data-aos="flip-up" data-aos-offset="200" data-aos-delay="50" class="card-movie col-5">
+      <div data-aos="flip-up" class="card-movie col-5">
         <img src=<%= bookmark.movie.poster_url %> />
         <div class="card-movie-infos">
           <div>
