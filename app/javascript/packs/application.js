@@ -9,16 +9,14 @@ require("@rails/activestorage").start()
 require("channels")
 require("jquery")
 
-import 'bootstrap'
+import 'bootstrap';
 import { initSelect2 } from '../components/init_select2';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { LoadDynamicBannerText } from '../components/banner'
+import { LoadDynamicBannerText } from '../components/banner';
 
 document.addEventListener("turbolinks:load", () => {
   AOS.init();
   initSelect2();
-    if (!window.location.href.includes("list")) {
-      LoadDynamicBannerText();
-    }
-  });
+  LoadDynamicBannerText();
+});
