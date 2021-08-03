@@ -1,7 +1,9 @@
 require 'open-uri'
 
 # Seeding Lists -------------
-List.create(name: 'Drama', background_image: 'https://images.unsplash.com/photo-1559781728-fed5d011996a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
+drama = List.create(name: 'Drama', background_image: 'https://images.unsplash.com/photo-1559781728-fed5d011996a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
+file = URI.open('https://res.cloudinary.com/dmlvtscck/image/upload/v1628016936/1k93s7iaj4irgza8ig2gcxr5mo1x.jpg')
+drama.photo.attach(io: file, filename: 'drame.jpg')
 List.create(name: 'Comedy', background_image: 'https://images.unsplash.com/photo-1612853777170-2c630d988310?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
 List.create(name: 'Classic', background_image: 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
 List.create(name: 'Horror', background_image: 'https://images.unsplash.com/photo-1602737337930-b4f775f99f77?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' )
