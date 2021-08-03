@@ -1,14 +1,27 @@
 require 'open-uri'
 
 # Seeding Lists -------------
-drama = List.create(name: 'Drama', background_image: 'https://images.unsplash.com/photo-1559781728-fed5d011996a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
+drama = List.create(name: 'Drama')
 file = URI.open('https://res.cloudinary.com/dmlvtscck/image/upload/v1628016936/1k93s7iaj4irgza8ig2gcxr5mo1x.jpg')
 drama.photo.attach(io: file, filename: 'drame.jpg')
-List.create(name: 'Comedy', background_image: 'https://images.unsplash.com/photo-1612853777170-2c630d988310?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
-List.create(name: 'Classic', background_image: 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
-List.create(name: 'Horror', background_image: 'https://images.unsplash.com/photo-1602737337930-b4f775f99f77?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' )
-List.create(name: 'Thriller', background_image: 'https://images.unsplash.com/photo-1532977692289-827d858a170b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1337&q=80')
-List.create(name: 'To rewatch', background_image: 'https://images.unsplash.com/photo-1608170825938-a8ea0305d46c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1250&q=80')
+comedy = List.create(name: 'Comedy')
+file = URI.open('https://res.cloudinary.com/dmlvtscck/image/upload/v1628017044/tf92ogu430zoybpporw8ocqz6e98.jpg')
+comedy.photo.attach(io: file, filename: 'comedy.jpg')
+classic = List.create(name: 'Classic')
+file = URI.open('https://res.cloudinary.com/dmlvtscck/image/upload/v1628017119/w4bzupkoj9fb0jj588q3fa9wgq06.jpg')
+classic.photo.attach(io: file, filename: 'classic.jpg')
+horror = List.create(name: 'Horror')
+file = URI.open('https://res.cloudinary.com/dmlvtscck/image/upload/v1628017186/q8kwsbzgz6asvnej73kw7hv4y87h.jpg')
+horro.photo.attach(io: file, filename: 'horror.jpg')
+thriller = List.create(name: 'Thriller')
+file = URI.open('https://res.cloudinary.com/dmlvtscck/image/upload/v1628017243/ijk2ww9v6tsp5cjjwmhvcensjkxa.jpg')
+thriller.photo.attach(io: file, filename: 'thriller.jpg')
+torewatch = List.create(name: 'To rewatch')
+file = URI.open('https://res.cloudinary.com/dmlvtscck/image/upload/v1628017343/qgpathiab7kp4t6gwgm3qfn1wsps.jpg')
+torewatch.photo.attach(io: file, filename: 'torewatch.jpg')
+action = List.create(name: 'Action')
+file = URI.open('https://res.cloudinary.com/dmlvtscck/image/upload/v1628017402/6ezg6y8upgz6t75maapwxu11he2c.jpg')
+action.photo.attach(io: file, filename: 'action.jpg')
 
 # Seeding Movies ------------------------------
 
