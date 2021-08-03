@@ -1,6 +1,7 @@
 require 'open-uri'
 
 # Seeding Lists -------------
+puts "start seeding list..."
 drama = List.create(name: 'Drama')
 file = URI.open('https://res.cloudinary.com/dmlvtscck/image/upload/v1628016936/1k93s7iaj4irgza8ig2gcxr5mo1x.jpg')
 drama.photo.attach(io: file, filename: 'drame.jpg')
@@ -12,7 +13,7 @@ file = URI.open('https://res.cloudinary.com/dmlvtscck/image/upload/v1628017119/w
 classic.photo.attach(io: file, filename: 'classic.jpg')
 horror = List.create(name: 'Horror')
 file = URI.open('https://res.cloudinary.com/dmlvtscck/image/upload/v1628017186/q8kwsbzgz6asvnej73kw7hv4y87h.jpg')
-horro.photo.attach(io: file, filename: 'horror.jpg')
+horror.photo.attach(io: file, filename: 'horror.jpg')
 thriller = List.create(name: 'Thriller')
 file = URI.open('https://res.cloudinary.com/dmlvtscck/image/upload/v1628017243/ijk2ww9v6tsp5cjjwmhvcensjkxa.jpg')
 thriller.photo.attach(io: file, filename: 'thriller.jpg')
@@ -22,9 +23,10 @@ torewatch.photo.attach(io: file, filename: 'torewatch.jpg')
 action = List.create(name: 'Action')
 file = URI.open('https://res.cloudinary.com/dmlvtscck/image/upload/v1628017402/6ezg6y8upgz6t75maapwxu11he2c.jpg')
 action.photo.attach(io: file, filename: 'action.jpg')
-
+puts "seeding list done !"
 # Seeding Movies ------------------------------
 
+puts "start seeding movies..."
 url = 'http://tmdb.lewagon.com/movie/top_rated'
 movie_serialized = URI.open(url).read
 movie = JSON.parse(movie_serialized)
@@ -34,3 +36,4 @@ count = 0
   Movie.create!(title: movie['results'][count]['title'], overview: movie['results'][count]['overview'], poster_url: "https://image.tmdb.org/t/p/w500#{movie['results'][count]['poster_path']}", rating: movie['results'][count]['vote_average'])
   count += 1
 end
+puts "Done!"
