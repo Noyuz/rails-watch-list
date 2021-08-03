@@ -4,9 +4,11 @@
     <h1>Add a new List</h1>
       <%= simple_form_for @list do |f| %>
         <%= f.input :name %>
-        <%= f.input :background_image %>
+        <br>
+        <p id="label-photo">Photo</p>
+        <%= f.input :photo, as: :file, label: false %>
         <%= f.submit "Create list", class: "btn btn-success", id: "btn-validation" %>
-      <% end -%>
+      <% end %>
     </div>
   </div>
 </div>

@@ -17,3 +17,8 @@ hr {
   background: linear-gradient(#fdfbfb, #ebedee);
 }
 
+.image-tag {
+  max-height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
